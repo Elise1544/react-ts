@@ -1,15 +1,35 @@
 import {ToDoList} from '../components/ToDoList/ToDoList';
 import {Form} from '../components/Form/Form';
-import {Header} from '../components/Header/Header';
+import {ToDo} from '../models/todo-item';
+
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import {useDispatch, useSelector} from 'react-redux';
+import {RootState} from '../store';
+import {createAction, deleteAction, updateAction} from '../features/todoList';
 
 export const ToDoListPage = () => {
+	const toDoList = useSelector((state: RootState) => state.todoList.todos);
+	const dispatch = useDispatch();
+
+	const createNewToDo = (text: string) => {
+		dispatch(createAction(text));
+	};
+
+	const updateToDo = (toDoItem: ToDo) => {
+		dispatch(updateAction(toDoItem));
+	};
+
+	const deleteToDo = (toDoItem: ToDo) => {
+		dispatch(deleteAction(toDoItem));
+	};
+
 	return (
 		<>
-			<Header />
+			<Form createNewToDo={createNewToDo} />
 
-			<Form />
-
-			<ToDoList />
+			<ToDoList todos={toDoList} updateToDo={updateToDo} deleteToDo={deleteToDo} />
+			<ToastContainer />
 		</>
 	);
 };
