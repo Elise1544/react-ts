@@ -1,6 +1,6 @@
 import {ToDoListItem} from './ToDoListItem/ToDoListItem';
 import {ToDo} from '../../models/todo-item';
-import { ToDoListCompleted, ToDoListContainer, ToDoListFailed } from './ToDoList.styled';
+import {ToDoListCompleted, ToDoListContainer, ToDoListFailed} from './ToDoList.styled';
 
 export const ToDoList = (props: {todos: ToDo[]; updateToDo: Function; deleteToDo: Function}) => {
 	const checkedList = () => {
@@ -8,8 +8,10 @@ export const ToDoList = (props: {todos: ToDo[]; updateToDo: Function; deleteToDo
 			.filter((item) => {
 				return !item.isDone;
 			})
-			.map((item, index) => {
-				return <ToDoListItem toDoItem={item} key={index} updateToDo={props.updateToDo} deleteToDo={props.deleteToDo} />;
+			.map((item) => {
+				return (
+					<ToDoListItem toDoItem={item} key={item.id} updateToDo={props.updateToDo} deleteToDo={props.deleteToDo} />
+				);
 			});
 	};
 
@@ -18,8 +20,10 @@ export const ToDoList = (props: {todos: ToDo[]; updateToDo: Function; deleteToDo
 			.filter((item) => {
 				return item.isDone;
 			})
-			.map((item, index) => {
-				return <ToDoListItem toDoItem={item} key={index} updateToDo={props.updateToDo} deleteToDo={props.deleteToDo} />;
+			.map((item) => {
+				return (
+					<ToDoListItem toDoItem={item} key={item.id} updateToDo={props.updateToDo} deleteToDo={props.deleteToDo} />
+				);
 			});
 	};
 

@@ -2,6 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
 import {ToDo} from '../models/todo-item';
 import {toast, ToastOptions} from 'react-toastify';
+import {v4 as uuid} from 'uuid';
 
 const options: ToastOptions<{}> = {
 	position: toast.POSITION.BOTTOM_RIGHT,
@@ -23,7 +24,7 @@ export const TodoSlice = createSlice({
 	reducers: {
 		createAction: (state, action: PayloadAction<string>) => {
 			const newTodo: ToDo = {
-				id: state.todos.length,
+				id: uuid(),
 				text: action.payload,
 				isDone: false,
 			};

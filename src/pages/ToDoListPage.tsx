@@ -27,6 +27,8 @@ export const ToDoListPage = () => {
 	return (
 		<>
 			<Form createNewToDo={createNewToDo} />
+			{/* <Form /> */}
+
 
 			<ToDoList todos={toDoList} updateToDo={updateToDo} deleteToDo={deleteToDo} />
 			<ToastContainer />

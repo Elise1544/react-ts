@@ -1,13 +1,12 @@
 import React from 'react';
-import {Helmet, HelmetProvider} from 'react-helmet-async';
+import {Helmet} from 'react-helmet-async';
 
 export const Head = () => {
 	return (
 		<Helmet>
-			<meta charSet="utf-8" />
-			<title>My Title</title>
-			<link rel="canonical" href="http://mysite.com/example" />
-			<meta name="description" content="Helmet application" />
+			<link rel="preconnect" href="https://fonts.googleapis.com" />
+			<link rel="preconnect" href="https://fonts.gstatic.com" />
+			<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
 		</Helmet>
 	);
 };

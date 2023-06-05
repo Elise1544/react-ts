@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ToDoItem = styled.li`
+export const ToDoItemLi = styled.li`
     width: 100%;
     min-height: 50px;
     font-size: 14px;

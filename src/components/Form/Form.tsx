@@ -1,16 +1,18 @@
-import {useState} from 'react';
-import { FormBlock, FormControl, FormField, FormLabel, FormWrapper} from './Form.styled';
-import plusIcon from '../../assets/images/plus.png'
+import {FormBlock, FormControl, FormField, FormLabel, FormWrapper} from './Form.styled';
+import plusIcon from '../../assets/images/plus.png';
+import {useDispatch, useSelector} from 'react-redux';
+import {deleteAction, updateAction} from '../../features/formInput';
+import {RootState} from '../../store';
 
 export const Form = (props: {createNewToDo: Function}) => {
-	const [text, setText] = useState<string>('');
+	let input = useSelector((state: RootState) => state.formInput.input);
+	const dispatch = useDispatch();
 
 	const formSubmit = (event: React.SyntheticEvent) => {
 		event.preventDefault();
-
-		if (text) {
-			props.createNewToDo(text);
-			setText('');
+		if (input) {
+			props.createNewToDo(input);
+			dispatch(deleteAction());
 		}
 	};
 
@@ -18,8 +20,8 @@ export const Form = (props: {createNewToDo: Function}) => {
 		<FormWrapper>
 			<FormBlock action="#" onSubmit={formSubmit}>
 				<FormLabel>
-					<FormField value={text} type="text" onChange={(e) => setText(e.target.value)} />
-					<FormControl icon={plusIcon}/> 
+					<FormField value={input} type="text" onChange={(e) => dispatch(updateAction(e.target.value))} />
+					<FormControl icon={plusIcon} />
 				</FormLabel>
 			</FormBlock>
 		</FormWrapper>

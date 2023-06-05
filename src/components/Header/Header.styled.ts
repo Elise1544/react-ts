@@ -1,31 +1,52 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import {NavLink} from 'react-router-dom';
+import styled from 'styled-components';
 
 export const HeaderBlock = styled.header`
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 50px;
-    background-color: #4682b4;
-    display: flex;
-    align-items: center;
-`
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 50px;
+	background-color: ${({theme}) => theme.colors.backgroundPrimary};
+	transition: background-color 0.2s;
+	display: flex;
+	align-items: center;
+`;
 
 export const HeaderContainer = styled.div`
-    max-width: 97%;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
+	position: relative;
+	max-width: 97%;
+	width: 100%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
 export const HeaderNavLink = styled(NavLink)`
-    text-decoration: none;
-    padding: 10px;
-    color: #fff;
+	text-decoration: none;
+	padding: 10px;
+	color: #fff;
 
-    &.active {
-        color: #ffffff33;
-    }
-`
+	&.active {
+		color: #ffffff33;
+	}
+`;
+
+export const HeaderThemeContainer = styled.div`
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+`;
+
+export const HeaderThemeButton = styled.button`
+	width: 20px;
+	height: 20px;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+`;
+
+export const HeaderThemeImage = styled.img`
+	fill: ${({theme}) => theme.colors.fill};
+`;
