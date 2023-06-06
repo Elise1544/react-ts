@@ -3,8 +3,8 @@ export interface Theme {
 	colors: {
 		backgroundPrimary: string;
 		backgroundSecondary: string;
-		fill: string;
 	};
+	image: string;
 }
 
 export interface Themes {

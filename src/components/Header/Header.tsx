@@ -1,15 +1,6 @@
 import {useDispatch} from 'react-redux';
-import {
-	HeaderBlock,
-	HeaderContainer,
-	HeaderNavLink,
-	HeaderThemeButton,
-	HeaderThemeContainer,
-	HeaderThemeImage,
-} from './Header.styled';
+import {HeaderBlock, HeaderContainer, HeaderNavLink, HeaderThemeButton, HeaderThemeContainer} from './Header.styled';
 import {toggleThemeAction} from '../../features/themeList';
-
-import sun from '../../assets/images/sun.svg';
 
 export const Header = () => {
 	const dispatch = useDispatch();
@@ -24,9 +15,7 @@ export const Header = () => {
 					<HeaderThemeButton
 						onClick={() => {
 							dispatch(toggleThemeAction());
-						}}>
-						{/* <HeaderThemeImage src={sun} /> */}
-					</HeaderThemeButton>
+						}}></HeaderThemeButton>
 				</HeaderThemeContainer>
 			</HeaderContainer>
 		</HeaderBlock>

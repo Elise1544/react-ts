@@ -40,13 +40,11 @@ export const HeaderThemeContainer = styled.div`
 `;
 
 export const HeaderThemeButton = styled.button`
-	width: 20px;
-	height: 20px;
+	width: 30px;
+	height: 30px;
 	background-color: transparent;
 	border: none;
 	padding: 0;
-`;
-
-export const HeaderThemeImage = styled.img`
-	fill: ${({theme}) => theme.colors.fill};
+	background-image: url(${({theme}) => theme.image});
+	background-size: cover;
 `;
