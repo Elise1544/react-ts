@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.98ec47ca.css",
-    "main.js": "/static/js/main.fcd6ea35.js",
-    "static/media/404.jpg": "/static/media/404.cdf6cab48c42c66f07fd.jpg",
-    "static/media/sun.svg": "/static/media/sun.b9b9cec628769068c5e75e23a9190f4f.svg",
-    "static/media/moon.svg": "/static/media/moon.9275ebd6bea1c022b8865d89bbda7795.svg",
-    "index.html": "/index.html",
-    "main.98ec47ca.css.map": "/static/css/main.98ec47ca.css.map",
-    "main.fcd6ea35.js.map": "/static/js/main.fcd6ea35.js.map"
+    "main.css": "/react-ts/static/css/main.98ec47ca.css",
+    "main.js": "/react-ts/static/js/main.0c14c1bb.js",
+    "static/media/404.jpg": "/react-ts/static/media/404.cdf6cab48c42c66f07fd.jpg",
+    "static/media/sun.svg": "/react-ts/static/media/sun.b9b9cec628769068c5e75e23a9190f4f.svg",
+    "static/media/moon.svg": "/react-ts/static/media/moon.9275ebd6bea1c022b8865d89bbda7795.svg",
+    "index.html": "/react-ts/index.html",
+    "main.98ec47ca.css.map": "/react-ts/static/css/main.98ec47ca.css.map",
+    "main.0c14c1bb.js.map": "/react-ts/static/js/main.0c14c1bb.js.map"
   },
   "entrypoints": [
     "static/css/main.98ec47ca.css",
-    "static/js/main.fcd6ea35.js"
+    "static/js/main.0c14c1bb.js"
   ]
 }
